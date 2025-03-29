@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Hot - Zing MP3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .album-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .album {
+            position: relative;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .album img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            transition: 0.3s ease-in-out;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .overlay i {
+            font-size: 30px;
+            color: white;
+            transform: scale(0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+        .album:hover .overlay {
+            opacity: 1;
+        }
+        .album:hover .overlay i {
+            transform: scale(1);
+        }
+        .album:hover img {
+            filter: brightness(50%);
+        }
+        .album-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 0;
+            border-radius: 0 0 8px 8px;
+        }
+        .album-title {
+            font-weight: bold;
+        }
+        .album-artist {
+            font-size: 14px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2>Album Hot</h2>
+    <div class="album-container">
+        <div class="album">
+            <img src="https://lyricvn.com/wp-content/uploads/2023/11/ca90d34cb77b634ca65d1ca065890aeb.jpg" alt="Baby Honey (Single)">
+            <div class="overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Baby Honey (Single)</div>
+                <div class="album-artist">Đức Anh, Kyojizki Phan</div>
+            </div>
+        </div>
+        <div class="album">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.dBd7t2lfSAX7ScRUudSeggAAAA&pid=Api&P=0&h=180" alt="Cừu Non (Single)">
+            <div class="overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Cừu Non (Single)</div>
+                <div class="album-artist">Châu Dương, Đinh Quang Đạt</div>
+            </div>
+        </div>
+        <div class="album">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.MYCVABa87F3UT6g3lJ26yQHaFj&pid=Api&P=0&h=180" alt="Người ơi đừng bỏ quê">
+            <div class="overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Người ơi đừng bỏ quê</div>
+                <div class="album-artist">Hồ Văn Cường</div>
+            </div>
+        </div>
+        <div class="album">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.U00HMvWUp9Bh1sbd_CSfowHaEK&pid=Api&P=0&h=180" alt="Nghe nói anh yêu em">
+            <div class="overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Nghe nói anh yêu em</div>
+                <div class="album-artist">Châu Khải Phong, Ngân Ngân</div>
+            </div>
+        </div>
+        <div class="album">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.4hupUiXwmh2_geCeuk6fqAAAAA&pid=Api&P=0&h=180" alt="Tự Ta Đa Tình Tự Ta Đau">
+            <div class="overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="album-info">
+                <div class="album-title">Tự Ta Đa Tình Tự Ta Đau</div>
+                <div class="album-artist">Bạch Công Khanh</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
