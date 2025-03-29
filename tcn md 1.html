@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            scroll-behavior: smooth;
+        }
+        .top-nav {
+            background-color: #0288d1;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .side-nav {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 220px;
+            height: 100%;
+            background-color: #4fc3f7;
+            padding-top: 20px;
+            transition: 0.3s;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .side-nav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #333;
+            display: block;
+            transition: 0.3s;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .main-content {
+            margin-left: 250px;
+            margin-top: 80px;
+            padding: 30px;
+        }
+        .section {
+            padding: 25px;
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(2, 136, 209, 0.2);
+            transition: transform 0.3s ease-in-out;
+            display: none;
+        }
+        .exercise {
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+            background-color: #b3e5fc;
+            box-shadow: 0 4px 8px rgba(2, 136, 209, 0.1);
+        }
+        .file-content {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="#" onclick="showHome()">Trang Chủ</a>
+    </nav>
+    <div class="side-nav">
+        <a onclick="showSection('about-me')"><i class="fas fa-user"></i> Giới Thiệu</a>
+        <a onclick="showSection('exercises')"><i class="fas fa-book"></i> Bài Tập</a>
+    </div>
+    <div class="main-content">
+        <section id="about-me" class="section">
+            <h1 style="text-align: center; font-size: 2.5em;">Giới Thiệu</h1>
+            <p style="font-size: 1.5em;"><strong>Tên:</strong> Chu Xuân Minh Đức</p>
+            <p style="font-size: 1.5em;"><strong>Lớp:</strong> CNTT D2024B</p>
+            <p style="font-size: 1.5em;"><strong>Sở thích:</strong> Bóng Đá</p>
+        </section>
+        <section id="exercises" class="section" style="display: block;">
+            <h2>Bài Tập</h2>
+            <div class="exercise">
+                <h3>Buổi 6</h3>
+                <button onclick="showFile('file1')">Xem Bài Tập 1</button>
+                <button onclick="showFile('file2')">Xem Bài Tập 2</button>
+                <div id="file1" class="file-content" style="display: block;">
+                    <iframe src="bài 1 Web 23.3.2025.html" width="100%" height="600px"></iframe>
+                </div>
+                <div id="file2" class="file-content">
+                    <iframe src="bài 2 web 23.3.2025.html" width="100%" height="600px"></iframe>
+                </div>
+            </div>
+            <div class="exercise">
+                <h3>Buổi 7</h3>
+                <button onclick="showFile('file3')">Xem Bài Tập 1</button>
+                <button onclick="showFile('file4')">Xem Bài Tập 2</button>
+                <div id="file3" class="file-content" style="display: block;">
+                    <iframe src="bài 1 Web 26.3.2025.html" width="100%" height="600px"></iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        function showHome() {
+            showSection('about-me');
+        }
+        function showFile(fileId) {
+            document.querySelectorAll('.file-content').forEach(div => div.style.display = 'none');
+            document.getElementById(fileId).style.display = 'block';
+        }
+        window.onload = function() {
+            showSection('exercises');
+        };
+    </script>
+</body>
+</html>
